@@ -14,6 +14,14 @@ def discr(a,b,c):
             print("Корни уравнения x1 = ", x1," x2 = ", x2)
             return 
 
+def viet(b,c, limit=1000):
+  for x1 in range(-limit, limit + 1):
+    for x2 in range(-limit, limit + 1):
+      if x1 + x2 == -b and x1 * x2 == c:
+        print("Корни уравнения x1 = ", x1, " x2 = ", x2)
+        return x1, x2
+  return None
+
 while(True):
     print("Вычисление квадратного уравнения: введите коэффиценты a, b, c: ")
     a = int(input("a = "))
@@ -24,6 +32,6 @@ while(True):
         discr(a,b,c)
     else:
         if command == 2:
-            viet(a,b,c)
+            viet(b,c)
         else: print("Неверная команда")
     input()
